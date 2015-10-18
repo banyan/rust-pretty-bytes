@@ -31,5 +31,11 @@ pub fn run(args: env::Args) -> () {
         return print_usage(&program, opts);
     }
 
-    converter::convert(&args);
+    // TODO consider type
+    let num = match args[1].parse::<i32>() {
+        Ok(n) => n,
+        Err(..) => panic!()
+    };
+    // TODO change name
+    converter::convert(num);
 }

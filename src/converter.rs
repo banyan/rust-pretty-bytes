@@ -1,3 +1,3 @@
-pub fn convert(args: &Vec<String>) -> () {
-  println!("{:?}", args);
+pub fn convert(arg: i32) -> () {
+  println!("{:?}", arg);
 }
