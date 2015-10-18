@@ -1,3 +1,9 @@
+extern crate pretty_bytes;
+
+use std::env;
+use pretty_bytes::cli;
+
+#[cfg_attr(test, allow(dead_code))]
 fn main() {
-    println!("Hello, world!");
+    cli::run(env::args());
 }

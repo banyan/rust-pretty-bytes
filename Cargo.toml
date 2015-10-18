@@ -2,3 +2,6 @@
 name = "pretty-bytes"
 version = "0.1.0"
 authors = ["banyan"]
+
+[dependencies]
+getopts = "0.2.4"
