@@ -1,0 +1,4 @@
+[package]
+name = "pretty-bytes"
+version = "0.1.0"
+authors = ["banyan"]
