@@ -31,11 +31,11 @@ pub fn run(args: env::Args) -> () {
         return print_usage(&program, opts);
     }
 
-    // TODO consider type
-    let num = match args[1].parse::<i32>() {
+    let num = match args[1].parse::<f64>() {
         Ok(n) => n,
-        Err(..) => panic!()
+        Err(f) => { panic!(f.to_string()) }
     };
+
     // TODO change name
     converter::convert(num);
 }
