@@ -5,3 +5,4 @@ authors = ["banyan"]
 
 [dependencies]
 getopts = "0.2.4"
+num = "*"
