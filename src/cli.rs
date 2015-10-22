@@ -25,6 +25,7 @@ pub fn run(args: env::Args) -> () {
         Err(f) => { panic!(f.to_string()) }
     };
 
+    // TODO can't handle negative since it is handled as option
     if matches.opt_present("v") {
         return print_version();
     } else if matches.opt_present("h") || args.len() != 2 {
@@ -37,5 +38,5 @@ pub fn run(args: env::Args) -> () {
     };
 
     // TODO change name
-    converter::convert(num);
+    println!("{}", converter::convert(num));
 }
