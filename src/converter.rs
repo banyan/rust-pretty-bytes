@@ -1,7 +1,6 @@
 pub fn convert(num: f64) -> String {
-  // TODO Use is_sign_positive
-  // https://doc.rust-lang.org/std/primitive.f64.html?search=is_sign_positive
-  // let negative = num < 0;
+  let negative = if num.is_sign_positive() { "" } else { "-" };
+  let num = num.abs();
 
   // TODO check unit size
   let units = vec!["B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
@@ -10,5 +9,5 @@ pub fn convert(num: f64) -> String {
   let exponent = (num.ln() / delimiter.ln()).floor() as i32;
   let pretty_bytes = num / delimiter.powi(exponent);
   let unit = units[exponent as usize];
-  format!("{:.2} {}", pretty_bytes, unit)
+  format!("{}{:.2} {}", negative, pretty_bytes, unit)
 }
