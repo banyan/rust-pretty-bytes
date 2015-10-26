@@ -12,6 +12,7 @@ fn it_converts_bytes_to_human_readable_strings() {
     assert_eq!(convert(999_f64), "999 B");
     assert_eq!(convert(1001_f64), "1 kB");
     assert_eq!(convert(1e16), "10 PB");
+    assert_eq!(convert(1e30), "1000000 YB");
 }
 
 #[test]

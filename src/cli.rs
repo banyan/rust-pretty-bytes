@@ -49,6 +49,5 @@ pub fn run(args: env::Args) -> () {
         input.trim().parse::<f64>().unwrap()
     };
 
-    // TODO change name
     println!("{}", converter::convert(num));
 }
