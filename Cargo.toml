@@ -1,7 +1,11 @@
 [package]
 name = "pretty-bytes"
 version = "0.1.0"
-authors = ["banyan"]
+authors = ["Kohei Hasegawa"]
+description = "Convert bytes to a human readable string"
+repository = "https://github.com/banyan/rust-pretty-bytes"
+license = "MIT"
+readme = "README.md"
 
 [dependencies]
 getopts = "0.2.4"

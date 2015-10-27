@@ -6,7 +6,10 @@ use getopts::Options;
 use libc::{isatty, STDIN_FILENO};
 
 fn print_usage(program: &str, opts: Options) {
-    let brief = format!("Usage: {} <number>", program);
+    let brief = format!(
+r#"Usage:
+    $ {} <number>
+    $ echo <number> | {}"#, program, program);
     print!("{}", opts.usage(&brief));
 }
 
