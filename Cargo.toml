@@ -8,5 +8,5 @@ license = "MIT"
 readme = "README.md"
 
 [dependencies]
-getopts = "0.2.4"
-libc = "0.1"
+getopts = "0.2"
+libc = "0.2"
