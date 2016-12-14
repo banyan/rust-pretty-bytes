@@ -3,7 +3,11 @@ use ::converter;
 use std::io;
 use std::env;
 use getopts::Options;
-use libc::{isatty, STDIN_FILENO};
+use libc::isatty;
+#[cfg(unix)]
+use libc::STDIN_FILENO;
+#[cfg(windows)]
+const STDIN_FILENO: i32 = 0;
 
 fn print_usage(program: &str, opts: Options) {
     let brief = format!(
