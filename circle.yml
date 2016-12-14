@@ -5,6 +5,10 @@ machine:
     - ./rustup.sh --yes
     - sudo apt-get install libXxf86vm-dev libosmesa6-dev
 
+checkout:
+  post:
+    - git config --global --unset url.ssh://git@github.com:.insteadof
+
 test:
   override:
     - cargo build --verbose -j 2
