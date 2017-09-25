@@ -1,5 +1,5 @@
 extern crate getopts;
-extern crate libc;
+extern crate atty;
 
 pub mod cli;
 pub mod converter;

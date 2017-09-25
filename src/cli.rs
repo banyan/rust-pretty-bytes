@@ -3,11 +3,7 @@ use ::converter;
 use std::io;
 use std::env;
 use getopts::Options;
-use libc::isatty;
-#[cfg(unix)]
-use libc::STDIN_FILENO;
-#[cfg(windows)]
-const STDIN_FILENO: i32 = 0;
+use atty::{self, Stream};
 
 fn print_usage(program: &str, opts: Options) {
     let brief = format!(
@@ -21,13 +17,8 @@ fn print_version() {
     println!("{}", env!("CARGO_PKG_VERSION"));
 }
 
-fn stdin_isatty() -> bool {
-    let istty = unsafe { isatty(STDIN_FILENO as i32) };
-    istty == 1
-}
-
 pub fn run(args: env::Args) -> () {
-    let num: f64 = if stdin_isatty() {
+    let num: f64 = if atty::is(Stream::Stdin) {
         let args: Vec<String> = args.collect();
         let ref program = args[0];
 
